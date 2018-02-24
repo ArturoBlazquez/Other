@@ -1,4 +1,4 @@
-#Programa que se imprime a sí mismo, idea para hacer un bot de tw
+#Programa que se imprime a si mismo, idea para hacer un bot de tw
 
 import sys
 
