@@ -1,0 +1,98 @@
+# Conky settings #
+background no
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+#imlib_cache_size 0
+
+temperature_unit celsius
+
+# Window specifications #
+own_window_class Conky
+own_window yes
+own_window_type normal
+own_window_argb_visual yes
+own_window_argb_value 180
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 350 550
+maximum_width 550
+
+alignment tr
+gap_x 5
+gap_y 300
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+override_utf8_locale yes
+xftfont Ubuntu:bold:size=6
+xftalpha 0.8
+uppercase no
+
+temperature_unit celsius
+
+default_color 999999
+color0 1994D1
+color1 333333
+color2 1994D1
+color3 1994D1 
+
+
+TEXT
+${color}
+#Esto nos muestra los 4 procesadores y una barra de cada uno de ellos con su uso
+${font Ubuntu:style=bold:size=14}CPU $hr
+${freq_g cpu0} Ghz $alignr${acpitemp}ºC
+${font Ubuntu:style=bold:size=10}CORE 1: ${cpu cpu1}% ${cpubar cpu1}
+CORE 2: ${cpu cpu2}% ${cpubar cpu2}
+CORE 3: ${cpu cpu3}% ${cpubar cpu3}
+CORE 4: ${cpu cpu4}% ${cpubar cpu4}
+AVG: ${CPU}%
+$hr
+${font Ubuntu:style=bold:size=10}${top name 1}$alignr${top cpu 1}%
+${top name 2}$alignr${top cpu 2}%
+${top name 3}$alignr${top cpu 3}%
+
+#Esto nos muestra la RAM
+${font Ubuntu:style=bold:size=14}RAM $hr
+${font Ubuntu:style=bold:size=10}RAM $alignr $mem / $memmax  
+${membar} 
+${font Ubuntu:style=bold:size=10}SWAP $alignr $swap / $swapmax 
+$swapbar
+$hr
+${font Ubuntu:style=bold:size=10}${top_mem name 1}$alignr${top_mem mem 1}%
+${top_mem name 2}$alignr${top_mem mem 2}%
+${top_mem name 3}$alignr${top_mem mem 3}%
+${top_mem name 4}$alignr${top_mem mem 4}%
+${top_mem name 5}$alignr${top_mem mem 5}%
+${top_mem name 6}$alignr${top_mem mem 6}%
+
+#Esto nos muestra los discos
+${font Ubuntu:style=bold:size=14}DISKS $hr
+${font Ubuntu:style=bold:size=10}/ $alignr ${fs_used /} / ${fs_size /}
+${fs_bar /}
+${font Ubuntu:style=bold:size=10}HOME $alignr ${fs_used /home} / ${fs_size /home}
+${fs_bar /home}
+
+#Esto nos muestra el estado de la bateria con una barra 
+${font Ubuntu:style=bold:size=14}Batery $hr
+${font Ubuntu:style=bold:size=10} ${battery BAT0} $alignr
+${battery_bar BAT0}

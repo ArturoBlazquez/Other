@@ -1,0 +1,10 @@
+var iDiv = document.createElement('div');
+iDiv.id = 'idArturo';
+iDiv.style.position = 'fixed';
+iDiv.style.bottom = '20px';
+iDiv.style.right = '5px';
+iDiv.style.fontSize = '30px';
+
+document.getElementsByTagName('body')[0].appendChild(iDiv);
+
+setInterval(function () {document.getElementById("idArturo").innerHTML = ((document.body.scrollTop/document.getElementById("page-container").scrollHeight)*100).toFixed(2) + "%";}, 1000);
