@@ -1,1 +1,4 @@
-  Para que funcione hay que generar las claves ssh
+Para que funcione hay que generar las claves ssh
+
+ssh-keygen
+ssh-copy-id arturobl.com@ssh.arturobl.com
