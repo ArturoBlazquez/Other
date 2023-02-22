@@ -30,21 +30,26 @@ pyenv global 2.7.18
 brew install socat
 ```
 - Install adb
+
+> This now doesn't work. You have to download Android SDK Platform-Tools
+
 ```
 brew install android-platform-tools
 ```
 - .bash_profile/.zshrc
-```shell
+``` shell
 ### ALIASES ###
 alias mc="mvn clean"
 alias mci="mvn clean install"
 alias mcis="mvn clean install -Dmaven.test.skip=true"
 alias mcist="mvn clean install -Dmaven.test.skip=true"
-alias xiaomiRmBloat="adb shell \"pm disable-user com.xiaomi.mipicks && pm disable-user com.miui.videoplayer\""
+alias xiaomiRmBloat="~/Software/android_sdk/adb shell \"pm disable-user com.xiaomi.mipicks && pm disable-user com.miui.videoplayer\""
 
 # docker-maven-plugin (https://www.adictosaltrabajo.com/2021/11/12/maven-mac-m1-aarch64-fabric8-docker-maven-plugin/)
 alias socat-start="socat TCP-LISTEN:2375,range=127.0.0.1/32,reuseaddr,fork UNIX-CLIENT:/var/run/docker.sock"
 ### ALIASES ###
+
+PS1="%n:%~ $ "
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -66,3 +71,7 @@ fi
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
+
+- Install Docker
+- Install postman
+- Install Spotify
