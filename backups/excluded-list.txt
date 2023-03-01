@@ -1,0 +1,14 @@
+/Users/arturo/Software/backups/backups
+/Users/arturo/Software/backups/backups_to_restore
+/Users/arturo/Software/backups/restored_files
+/Users/arturo/Library
+/Users/arturo/Applications
+/Users/arturo/Projects/*/node_modules
+/Users/arturo/Projects/*/.angular
+/Users/arturo/Projects/*/.idea
+/Users/arturo/Projects/*/target
+/Users/arturo/Pictures/*.photoslibrary
+/Users/arturo/Music/Music
+'/Users/arturo/.*/'
+'/Users/arturo/**/.DS_Store'
+'/Users/arturo/.DS_Store'
