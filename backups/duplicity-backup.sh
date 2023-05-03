@@ -1,12 +1,12 @@
 #!/bin/bash
 
 SOURCE=$HOME
-DEST=file://$HOME/Software/backups/backups/
+DEST=file://$HOME/Backups/backups/
 
-RESTORE_SOURCE=file://$HOME/Software/backups/backups_to_restore/
-RESTORE_DEST=$HOME/Software/backups/restored_files/
+RESTORE_SOURCE=file://$HOME/Backups/backups_to_restore/
+RESTORE_DEST=$HOME/Backups/restored_files/
 
-EXCLUDE_FILELIST=$HOME/Software/backups/config/excluded-list.txt
+EXCLUDE_FILELIST=$HOME/Projects/Other/backups/excluded-list.txt
 FULL_EVERY="30D"
 KEEP_FULL=2
 
@@ -28,6 +28,12 @@ display_usage() {
   echo "  $0 restore-file directory/ 3D"
   exit 1
 }
+
+PASSPHRASE=$(security find-generic-password -a "$USER" -s duplicityPassphrase -w)
+
+if [ -n "$PASSPHRASE" ]; then
+  export PASSPHRASE
+fi
 
 if [ -z "$1" ] || [[ $1 = "backup" ]]; then
 
@@ -81,3 +87,5 @@ elif [[ $1 = "restore-file" ]]; then
 else
   display_usage
 fi
+
+unset PASSPHRASE

@@ -44,7 +44,7 @@ alias mci="mvn clean install"
 alias mcis="mvn clean install -Dmaven.test.skip=true"
 alias mcist="mvn clean install -Dmaven.test.skip=true"
 alias xiaomiRmBloat="~/Software/android_sdk/adb shell \"pm disable-user com.xiaomi.mipicks && pm disable-user com.miui.videoplayer\""
-alias backup="~/Software/backups/config/duplicity-backup.sh"
+alias backup="ulimit -n 1024 && ~/Projects/Other/backups/duplicity-backup.sh"
 
 # docker-maven-plugin (https://www.adictosaltrabajo.com/2021/11/12/maven-mac-m1-aarch64-fabric8-docker-maven-plugin/)
 alias socat-start="socat TCP-LISTEN:2375,range=127.0.0.1/32,reuseaddr,fork UNIX-CLIENT:/var/run/docker.sock"
